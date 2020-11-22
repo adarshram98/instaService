@@ -1,0 +1,8 @@
+.customerhome__section{
+    display: flex;
+    
+}
+.customerhome__card{
+    align-items: center;
+    justify-content: space-around;
+}

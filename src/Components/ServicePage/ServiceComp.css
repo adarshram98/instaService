@@ -1,0 +1,74 @@
+.servicecomp {
+    display: flex;
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+  }
+
+.servicecomp:hover {
+    opacity: 0.8;
+}
+
+.servicecomp > img {
+    height: 200px;
+    width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.servicecomp__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.servicecomp__heart {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+.servicecomp__infoTop {
+    width: 40vw;
+}
+
+.servicecomp__infoTop > h3 {
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.servicecomp__infoTop > p {
+    margin-top: 10px;
+    font-size: 13px;
+    color: gray;
+  }
+  
+.servicecomp__infoBottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.servicecomp__star {
+    color: red;
+}
+
+
+.servicecomp__stars {
+    display: flex;
+    align-items: center;
+}
+
+.servicecomps__price > p {
+    text-align: right;
+  }
+
+.servicecomps__price {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
