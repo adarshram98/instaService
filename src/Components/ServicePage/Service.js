@@ -1,19 +1,50 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './Service.css'
 import { Button } from "@material-ui/core"
 import ServiceComp from './ServiceComp'
+import { useStateValue } from '../../StateProvider'
+import {db} from '../../firebase'
+
 const Service = () => {
+    const [{jobs},dispatch] = useStateValue()
+    // const [jobs,setJobs]=use
+    useEffect(() => {
+      db.collection('Jobs').onSnapshot(snap=>{
+        dispatch({
+          type:"ADD_TO_JOBS",
+          jobs:snap.docs.map(doc => doc.data())
+        })
+      })
+      return () => {
+        
+      }
+    }, [])
+    //  const[{jobs},dispatch] = useStateValue();
     return (
         <div className="service">
             <div className="service__info">
             <h1>Services</h1>
             <Button variant="outlined">Experience</Button>
-                <Button variant="outlined">Time</Button>
+                <Button variant="outlined">Category</Button>
                 <Button variant="outlined">Price</Button>
                 <Button variant="outlined">Location</Button>
                 <Button variant="outlined">More filters</Button>
             </div>
-            <ServiceComp
+
+             {
+                jobs[0]?.map(job => (
+                    <ServiceComp 
+                    img={job.image}
+                location={job?.location}
+                title={job?.title}
+                description={job?.description}
+                star={4.73}
+                price={job?.price} >
+
+                    </ServiceComp>
+                ))
+            } 
+            {/* <ServiceComp
                 img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
                 location="Private room in center of London"
                 title="Stay at this spacious Edwardian House"
@@ -21,7 +52,17 @@ const Service = () => {
                 star={4.73}
                 price="£30 / night"
                 total="£117 total"
-                />
+                />*/}
+                 {/* <ServiceComp 
+                img={jobs[0]?.image}
+                location={jobs[0]?.location}
+                title={jobs[0]?.title}
+                description={jobs[0]?.description}
+                star={4.73}
+                price={jobs[0]?.price}
+                // total="£117 total"
+                />  */}
+            
             
             {/* 
             />

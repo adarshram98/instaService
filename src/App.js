@@ -1,11 +1,27 @@
 import logo from './logo.svg';
 import Header from './Components/Header'
+import{useEffect} from 'react';
 import './App.css';
 import Home from './Components/Home';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import CustomerLanding from './Components/CustomerLanding';
 import Service from './Components/ServicePage/Service'
+import {db} from './firebase'
+import { useStateValue } from './StateProvider';
 function App() {
+  const [{jobs},dispatch] = useStateValue()
+  // const [jobs,setJobs]=use
+  // useEffect(() => {
+  //   db.collection('Jobs').onSnapshot(snap=>{
+  //     dispatch({
+  //       action:"ADD_TO_JOBS",
+  //       jobs:snap
+  //     })
+  //   })
+  //   return () => {
+      
+  //   }
+  // }, [])
   return (
    
     <Router>
