@@ -9,6 +9,7 @@ import Service from './Components/ServicePage/Service'
 import {db} from './firebase'
 import { useStateValue } from './StateProvider';
 import Login from './Components/Login/Login'
+import BusinessHome from './Components/Business/BusinessHome';
 function App() {
   const [{jobs},dispatch] = useStateValue()
   // const [jobs,setJobs]=use
@@ -28,17 +29,22 @@ function App() {
     <Router>
     <div className="app">
       <Switch>
-        <Route path="/business">
-          <h2>Business </h2>
-        </Route>
+       
+
         <Route path="/customer">
           <CustomerLanding></CustomerLanding>
         </Route>
+
         <Route path="/service">
           <Service></Service>
         </Route>
+
         <Route path="/login">
           <Login></Login>
+        </Route>
+
+        <Route path="/business">
+          <BusinessHome></BusinessHome>
         </Route>
         <Route path="/">
           <Header></Header>

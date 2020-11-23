@@ -28,7 +28,7 @@ const Login = () => {
         .then((auth) => {
             // create a user and logged in.. and redirect to homepage
             console.log("Registerd!!!!!!!!!/######")
-            history.push("/");//redirect
+            history.push("/business");//redirect
 
         })
         .catch((e) => alert(e.message))
