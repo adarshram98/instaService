@@ -56,8 +56,10 @@
     margin-top: 10px;
     height: 30px;
     /* border-color:#7e5c08 ; */
+    /* align-items: flex-end; */
+    cursor: pointer;
     color: white;
-    width: 80%;
+    width: 100%;
     margin-bottom: 10px;
     background-color: #191c1e;
 }
@@ -70,6 +72,7 @@
     width: 80%;
     margin-bottom: 10px;
     background-color: #191c1e;
+    cursor: pointer;
 }
 .home__businessRegister{
     border: 1px solid;
@@ -80,5 +83,10 @@
     width: 80%;
     margin-bottom: 10px;
     background-color: #45464759;
+}
+
+.home__customerWork{
+    /* border-radius: 999px; */
+    overflow: hidden;
 }
 
